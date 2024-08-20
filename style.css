@@ -4,10 +4,6 @@
     text-align: center;
 }
 
-.header {
-    font-size: 1.5em;
-}
-
 /* Navigation Bar Styles */
 .nav a {
     color: black;
@@ -63,8 +59,12 @@ ul:not(.browser-default) {
     list-style-type: none;
 }
 
-ul:not(.browser-default) > li {
+ul:not(.browser-default)>li {
     list-style-type: circle;
+}
+
+ul li {
+    padding: 0px 0px;
 }
 
 a {
