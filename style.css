@@ -92,6 +92,10 @@ a {
     }
 }
 
+br {
+    margin-bottom: 0px;
+}
+
 /* Responsive Typography Styles */
 html {
     line-height: 1.5;
