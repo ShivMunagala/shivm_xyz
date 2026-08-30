@@ -57,6 +57,48 @@ h2 {
     color: #1a1a1a;
 }
 
+details {
+    margin: 40px 0 20px 0;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+summary::-webkit-details-marker,
+summary::marker {
+    display: none;
+}
+
+summary h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+summary h2::before {
+    content: "▸";
+    display: inline-block;
+    width: 16px;
+    font-size: 14px;
+    color: #888;
+}
+
+details[open] summary h2::before {
+    content: "▾";
+}
+
+summary:hover h2 {
+    color: #0366d6;
+}
+
+details .project {
+    margin-left: 24px;
+}
+
 .intro {
     font-size: 16px;
     color: #444;
@@ -87,11 +129,25 @@ h2 {
     line-height: 1.6;
 }
 
+.project-description ul {
+    margin: 4px 0 0 0;
+    padding-left: 22px;
+}
+
+.project-description li {
+    margin-bottom: 10px;
+    padding-left: 4px;
+}
+
+.project-description li:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 40px 25px;
     }
-    
+
     h1 {
         font-size: 28px;
     }
