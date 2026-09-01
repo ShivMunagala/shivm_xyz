@@ -17,6 +17,7 @@ body {
     margin: 0 auto;
     background: white;
     padding: 60px 40px;
+    border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
@@ -39,22 +40,89 @@ h1 {
     margin-bottom: 20px;
 }
 
-.links {
-    display: flex;
-    gap: 20px;
-    font-size: 14px;
-}
-
-.links a {
+a {
     color: #0366d6;
     text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid #0366d6;
+    outline-offset: 2px;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-size: 14px;
 }
 
 h2 {
     font-size: 20px;
     font-weight: 600;
-    margin: 40px 0 20px 0;
     color: #1a1a1a;
+}
+
+details {
+    margin: 40px 0 20px 0;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background: #f6f8fa;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+
+summary:hover {
+    background: #eef1f4;
+}
+
+summary:focus-visible {
+    outline: 2px solid #0366d6;
+    outline-offset: 2px;
+}
+
+summary::-webkit-details-marker,
+summary::marker {
+    display: none;
+}
+
+summary h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    transition: color 0.15s ease;
+}
+
+summary h2::before {
+    content: "▸";
+    display: inline-block;
+    width: 16px;
+    font-size: 14px;
+    color: #888;
+    transition: transform 0.15s ease;
+}
+
+details[open] summary h2::before {
+    transform: rotate(90deg);
+}
+
+summary:hover h2 {
+    color: #0366d6;
+}
+
+details .project {
+    margin-left: 24px;
 }
 
 .intro {
@@ -77,7 +145,7 @@ h2 {
 
 .project-meta {
     font-size: 13px;
-    color: #888;
+    color: #6a737d;
     margin-bottom: 8px;
 }
 
@@ -87,12 +155,30 @@ h2 {
     line-height: 1.6;
 }
 
+.project-description ul {
+    margin: 4px 0 0 0;
+    padding-left: 22px;
+}
+
+.project-description li {
+    margin-bottom: 10px;
+    padding-left: 4px;
+}
+
+.project-description li:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 40px 25px;
     }
-    
+
     h1 {
         font-size: 28px;
+    }
+
+    summary {
+        padding: 8px 12px;
     }
 }
